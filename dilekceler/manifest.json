@@ -1,0 +1,18 @@
+{
+  "petitions": [
+    {
+      "id": "anlasmali-bosanma",
+      "title": "Anlaşmalı Boşanma Dilekçesi",
+      "category": "Aile Hukuku",
+      "description": "Tarafların boşanma şartlarında anlaştığı, protokollü boşanma davası için dilekçe.",
+      "file": "dilekceler/anlasmali-bosanma.json"
+    },
+    {
+      "id": "trafik-cezasi-itiraz",
+      "title": "Trafik Cezası İtiraz Dilekçesi",
+      "category": "İdari / Trafik",
+      "description": "Haksız kesildiğini düşündüğünüz idari para cezasının iptali için Sulh Ceza Hâkimliği'ne itiraz.",
+      "file": "dilekceler/trafik-cezasi-itiraz.json"
+    }
+  ]
+}

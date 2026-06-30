@@ -1,0 +1,68 @@
+{
+  "id": "trafik-cezasi-itiraz",
+  "title": "Trafik Cezası İtiraz Dilekçesi",
+  "category": "İdari / Trafik",
+  "description": "Haksız kesildiğini düşündüğünüz idari para cezasının iptali için Sulh Ceza Hâkimliği'ne itiraz.",
+  "note": "İtiraz süresi, cezanın <b>tebliğinden itibaren 15 gündür</b> (yüz yüze yazıldıysa ceza gününden itibaren). Bu <b>kesin bir süredir</b>, kaçırılırsa ceza kesinleşir. Şablonu birebir kopyalamak yerine kendi olayınıza özgü somut gerekçeleri yazmanız itirazınızı güçlendirir.",
+  "groups": [
+    {
+      "title": "Mahkeme",
+      "fields": [
+        { "id": "mahkeme_il", "label": "Hâkimliğin Bulunduğu İl", "type": "text", "placeholder": "BURSA", "value": "BURSA" }
+      ]
+    },
+    {
+      "title": "İtiraz Eden",
+      "fields": [
+        { "id": "itiraz_ad", "label": "Adı Soyadı", "type": "text", "placeholder": "Ahmet Yılmaz", "value": "" },
+        { "id": "itiraz_tc", "label": "T.C. Kimlik No", "type": "text", "placeholder": "11111111111", "value": "" },
+        { "id": "itiraz_adres", "label": "İkametgah Adresi", "type": "textarea", "placeholder": "Mahalle, cadde, no, ilçe / il", "value": "" }
+      ]
+    },
+    {
+      "title": "Ceza Tutanağı",
+      "fields": [
+        { "id": "sube", "label": "Tutanağı Düzenleyen Birim", "type": "text", "placeholder": "Bursa İl Emniyet Müdürlüğü Trafik Denetleme Şube Müdürlüğü", "value": "Bursa İl Emniyet Müdürlüğü Trafik Denetleme Şube Müdürlüğü" },
+        { "id": "tanzim_tarihi", "label": "Tutanağın Tanzim (Düzenlenme) Tarihi", "type": "text", "placeholder": "01.03.2026", "value": "" },
+        { "id": "teblig_tarihi", "label": "Tutanağın Tebliğ (Ulaşma) Tarihi", "type": "text", "placeholder": "10.03.2026", "value": "" },
+        { "id": "seri_no", "label": "Tutanak Seri No", "type": "text", "placeholder": "MA", "value": "" },
+        { "id": "sira_no", "label": "Tutanak Sıra No", "type": "text", "placeholder": "123456", "value": "" },
+        { "id": "ceza_bedel", "label": "Ceza Bedeli (TL)", "type": "text", "placeholder": "2.167", "value": "" }
+      ]
+    },
+    {
+      "title": "Olay Detayı",
+      "fields": [
+        { "id": "plaka", "label": "Araç Plakası", "type": "text", "placeholder": "16 ABC 123", "value": "" },
+        { "id": "ihlal_turu", "label": "İddia Edilen İhlal", "type": "text", "placeholder": "hız sınırını aştığım / kırmızı ışıkta geçtiğim", "value": "" },
+        { "id": "guzergah_durumu", "label": "İtiraz Gerekçeniz (güzergâh durumu)", "type": "textarea", "placeholder": "herhangi bir radar uyarı levhası bulunmamaktadır / EDS fotoğraflarında aracımın plakası ve sürücü net değildir / somut bir delil sunulmamıştır", "value": "" }
+      ]
+    }
+  ],
+  "document": [
+    { "type": "court", "text": "{{mahkeme_il}} NÖBETÇİ SULH CEZA HÂKİMLİĞİNE" },
+    { "type": "spacer" },
+    { "type": "row", "label": "İTİRAZ EDEN", "text": "{{itiraz_ad}} (T.C. Kimlik No: {{itiraz_tc}})" },
+    { "type": "row", "label": "ADRES", "text": "{{itiraz_adres}}" },
+    { "type": "spacer" },
+    { "type": "row", "label": "TANZİM TARİHİ", "text": "{{tanzim_tarihi}}" },
+    { "type": "row", "label": "TEBLİĞ TARİHİ", "text": "{{teblig_tarihi}}" },
+    { "type": "spacer" },
+    { "type": "row", "label": "İTİRAZ KONUSU", "text": "{{sube}}’nün {{tanzim_tarihi}} tarih, {{seri_no}} Seri ve {{sira_no}} Sıra numaralı, hakkımda düzenlenen {{ceza_bedel}} TL bedelli idari para cezası karar tutanağının ve (varsa) ehliyete el koyma / araç men işleminin İPTALİ talebidir." },
+    { "type": "row", "label": "AÇIKLAMALAR", "text": "" },
+    { "type": "numbered", "items": [
+      "Hakkımda {{tanzim_tarihi}} tarihinde, {{plaka}} plakalı aracımla {{ihlal_turu}} gerekçesiyle gıyabımda (yokluğumda) trafik idari para cezası karar tutanağı düzenlenmiş ve işbu tutanak tarafıma {{teblig_tarihi}} tarihinde tebliğ edilmiştir.",
+      "Kesilen bu ceza hukuka ve hakkaniyete aykırıdır. Söz konusu ihlalin yapıldığı iddia edilen güzergâhta {{guzergah_durumu}}.",
+      "Ceza hukukunun evrensel ilkesi olan “şüpheden sanık yararlanır” ilkesi gereğince, iddia edilen kural ihlalinin idare tarafından kesin, net ve itiraza mahal bırakmayacak şekilde (fotoğraf, video kaydı vb.) ispatlanması gerekmektedir. Yargıtay emsal kararları da bu yöndedir. Yeterli uyarı yapılmadan veya somut delile dayanmadan kesilen işbu fahiş cezanın iptali gerekmektedir."
+    ] },
+    { "type": "row", "label": "HUKUKİ NEDENLER", "text": "2918 Sayılı Karayolları Trafik Kanunu, 5326 Sayılı Kabahatler Kanunu, 7574 Sayılı Kanun, Yargıtay Kararları ve ilgili mevzuat." },
+    { "type": "row", "label": "SONUÇ VE İSTEM", "text": "Yukarıda kısaca arz ve izah ettiğim nedenler ve sayın Hâkimliğinizce re’sen gözetilecek hususlar doğrultusunda; hukuka ve usule aykırı olarak düzenlenen {{tanzim_tarihi}} tarih, {{seri_no}} Seri ve {{sira_no}} Sıra numaralı trafik idari para cezası tutanağının ve buna bağlı uygulanan ek yaptırımların İPTALİNE, yargılama giderlerinin karşı tarafa yükletilmesine karar verilmesini saygılarımla arz ve talep ederim." },
+    { "type": "signature", "lines": ["İtiraz Eden", "{{itiraz_ad}}", "İmza"] },
+    { "type": "ek", "title": "EKLER:", "items": [
+      "İtiraza konu Trafik Cezası Tutanağı ve Tebligat Zarfı Fotokopisi",
+      "Ruhsat Fotokopisi",
+      "Kimlik Fotokopisi",
+      "(Varsa) Olay anına ilişkin fotoğraf, video veya tanık beyanı"
+    ] }
+  ]
+}
