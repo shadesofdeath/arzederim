@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dilekçem — Hazır Resmi Dilekçe Şablonları</title>
+<meta name="description" content="Resmi dilekçe şablonlarını doldurun, anında düzgün biçimlenmiş halini kopyalayın veya PDF olarak indirin." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Inter:wght@400;450;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#E7EAF1;
+    --bg-grad:#EEF1F6;
+    --surface:#FFFFFF;
+    --ink:#1A2234;
+    --ink-soft:#3A445B;
+    --muted:#76819A;
+    --faint:#A7B0C2;
+    --line:#E2E6EE;
+    --line-soft:#EDF0F5;
+    --paper:#FCFBF7;
+    --paper-edge:#EFEBE0;
+    --seal:#8E2B36;
+    --seal-soft:#B5535D;
+    --gold:#B0894F;
+    --accent:#26426F;
+    --accent-soft:#365a93;
+    --accent-bg:#EAF0F8;
+    --hl:#FBEFC2;
+    --radius:18px;
+    --radius-sm:12px;
+    --shadow-sm:0 1px 2px rgba(26,34,52,.05),0 2px 8px rgba(26,34,52,.05);
+    --shadow-md:0 4px 14px rgba(26,34,52,.08),0 18px 40px rgba(26,34,52,.10);
+    --shadow-paper:0 1px 3px rgba(40,33,20,.06),0 22px 50px rgba(40,33,20,.13);
+    --fs-ui:'Inter',system-ui,sans-serif;
+    --fs-display:'Schibsted Grotesk','Inter',sans-serif;
+    --fs-doc:'Lora',Georgia,serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--fs-ui);
+    color:var(--ink);
+    background:
+      radial-gradient(1200px 600px at 80% -10%, #fff 0%, rgba(255,255,255,0) 60%),
+      linear-gradient(180deg,var(--bg-grad),var(--bg));
+    background-attachment:fixed;
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+  button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+  ::selection{background:var(--hl)}
+
+  /* ---------- Header ---------- */
+  .app-header{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:saturate(160%) blur(14px);
+    -webkit-backdrop-filter:saturate(160%) blur(14px);
+    background:rgba(245,247,250,.78);
+    border-bottom:1px solid var(--line);
+  }
+  .app-header__in{
+    max-width:1180px;margin:0 auto;padding:13px 22px;
+    display:flex;align-items:center;gap:13px;
+  }
+  .brand{display:flex;align-items:center;gap:11px;cursor:pointer;border-radius:10px}
+  .brand__mark{width:34px;height:34px;flex:none;filter:drop-shadow(0 2px 4px rgba(142,43,54,.25))}
+  .brand__name{font-family:var(--fs-display);font-weight:700;font-size:1.18rem;letter-spacing:-.02em}
+  .brand__name b{color:var(--seal);font-weight:700}
+  .brand__tag{font-size:.74rem;color:var(--muted);margin-top:-2px;letter-spacing:.01em}
+  .header-spacer{flex:1}
+  .header-note{
+    font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:6px;
+  }
+  .header-note svg{width:15px;height:15px;color:var(--seal-soft)}
+
+  /* ---------- Home ---------- */
+  .home{max-width:1180px;margin:0 auto;padding:44px 22px 70px}
+  .hero{max-width:680px;margin-bottom:40px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:7px;
+    font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--seal);background:#fff;border:1px solid var(--line);
+    padding:6px 12px;border-radius:999px;box-shadow:var(--shadow-sm);
+  }
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--seal)}
+  .hero h1{
+    font-family:var(--fs-display);font-weight:700;
+    font-size:clamp(2.1rem,5.2vw,3.3rem);line-height:1.04;letter-spacing:-.03em;
+    margin:18px 0 14px;color:var(--ink);
+  }
+  .hero h1 .seal-ink{
+    background:linear-gradient(180deg,var(--seal),#6f1f28);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero p{font-size:1.06rem;color:var(--ink-soft);max-width:560px}
+
+  .cat{margin-top:36px}
+  .cat__head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px}
+  .cat__title{font-family:var(--fs-display);font-weight:600;font-size:1.05rem;letter-spacing:-.01em}
+  .cat__rule{flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+  .cat__count{font-size:.8rem;color:var(--faint);font-variant-numeric:tabular-nums}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px}
+  .card{
+    position:relative;text-align:left;
+    background:var(--surface);border:1px solid var(--line);
+    border-radius:var(--radius);padding:22px 22px 20px;
+    box-shadow:var(--shadow-sm);
+    transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s,border-color .22s;
+    overflow:hidden;
+  }
+  .card::before{
+    content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
+    background:linear-gradient(180deg,var(--seal),var(--seal-soft));
+    opacity:0;transition:opacity .22s;
+  }
+  .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:#d4dae6}
+  .card:hover::before{opacity:1}
+  .card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .card__ico{
+    width:42px;height:42px;border-radius:11px;display:grid;place-items:center;
+    background:var(--accent-bg);color:var(--accent);margin-bottom:15px;
+  }
+  .card__ico svg{width:22px;height:22px}
+  .card__cat{
+    font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--seal);margin-bottom:6px;
+  }
+  .card__title{font-family:var(--fs-display);font-weight:600;font-size:1.13rem;letter-spacing:-.01em;margin-bottom:7px}
+  .card__desc{font-size:.9rem;color:var(--muted);line-height:1.45}
+  .card__go{
+    margin-top:16px;display:inline-flex;align-items:center;gap:6px;
+    font-size:.85rem;font-weight:600;color:var(--accent);
+  }
+  .card__go svg{width:15px;height:15px;transition:transform .2s}
+  .card:hover .card__go svg{transform:translateX(3px)}
+
+  /* ---------- Editor ---------- */
+  .editor{display:none;max-width:1180px;margin:0 auto;padding:20px 22px 80px}
+  .editor.active{display:block}
+  .editor-top{
+    display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:6px;
+  }
+  .back-btn{
+    display:inline-flex;align-items:center;gap:7px;
+    font-size:.88rem;font-weight:500;color:var(--ink-soft);
+    padding:8px 13px 8px 10px;border-radius:10px;border:1px solid var(--line);
+    background:#fff;box-shadow:var(--shadow-sm);transition:.18s;
+  }
+  .back-btn:hover{color:var(--ink);border-color:#cfd6e3}
+  .back-btn svg{width:16px;height:16px}
+  .editor-head{margin:14px 0 18px}
+  .editor-head .ecat{
+    font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--seal)
+  }
+  .editor-head h2{font-family:var(--fs-display);font-weight:700;font-size:clamp(1.5rem,3.4vw,2rem);letter-spacing:-.02em;margin-top:4px}
+
+  .toolbar{
+    display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:18px;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:.88rem;font-weight:600;padding:10px 16px;border-radius:11px;
+    transition:.16s;white-space:nowrap;
+  }
+  .btn svg{width:17px;height:17px}
+  .btn--primary{background:var(--accent);color:#fff;box-shadow:0 2px 8px rgba(38,66,111,.28)}
+  .btn--primary:hover{background:var(--accent-soft);transform:translateY(-1px)}
+  .btn--ghost{background:#fff;color:var(--ink-soft);border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+  .btn--ghost:hover{border-color:#cfd6e3;color:var(--ink)}
+  .toolbar__sp{flex:1}
+  .copied-tag{
+    font-size:.82rem;font-weight:600;color:#1d7a4d;display:flex;align-items:center;gap:6px;
+    opacity:0;transform:translateY(2px);transition:.2s;pointer-events:none;
+  }
+  .copied-tag.show{opacity:1;transform:none}
+  .copied-tag svg{width:15px;height:15px}
+
+  .mobile-toggle{display:none;margin-bottom:16px}
+  .seg{display:inline-flex;background:#e4e8f0;border-radius:12px;padding:4px;gap:3px;width:100%}
+  .seg button{flex:1;font-size:.86rem;font-weight:600;color:var(--muted);padding:9px;border-radius:9px;transition:.16s}
+  .seg button.on{background:#fff;color:var(--ink);box-shadow:var(--shadow-sm)}
+
+  .split{display:grid;grid-template-columns:minmax(360px,440px) 1fr;gap:26px;align-items:start}
+
+  /* ---- Form pane ---- */
+  .pane--form{display:flex;flex-direction:column;gap:16px}
+  .fgroup{
+    background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow-sm);overflow:hidden;
+  }
+  .fgroup__head{
+    display:flex;align-items:center;gap:10px;
+    padding:14px 18px;border-bottom:1px solid var(--line-soft);
+    background:linear-gradient(180deg,#fbfcfe,#f7f9fc);
+  }
+  .fgroup__num{
+    width:22px;height:22px;border-radius:7px;flex:none;
+    display:grid;place-items:center;font-size:.72rem;font-weight:700;
+    background:var(--seal);color:#fff;font-variant-numeric:tabular-nums;
+  }
+  .fgroup__title{font-family:var(--fs-display);font-weight:600;font-size:.96rem;letter-spacing:-.01em}
+  .fgroup__body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:14px}
+  .field label{display:block;font-size:.8rem;font-weight:550;color:var(--ink-soft);margin-bottom:6px}
+  .field input,.field textarea{
+    width:100%;font-family:inherit;font-size:.92rem;color:var(--ink);
+    padding:10px 12px;border:1px solid var(--line);border-radius:10px;
+    background:#fbfcfe;transition:.16s;resize:vertical;
+  }
+  .field textarea{min-height:62px;line-height:1.45}
+  .field input::placeholder,.field textarea::placeholder{color:var(--faint)}
+  .field input:hover,.field textarea:hover{border-color:#cfd6e3}
+  .field input:focus,.field textarea:focus{
+    outline:none;border-color:var(--accent);background:#fff;
+    box-shadow:0 0 0 3px rgba(38,66,111,.12);
+  }
+
+  /* ---- Preview pane ---- */
+  .pane--preview{position:sticky;top:84px}
+  .paper-wrap{
+    background:#dfe3ec;border-radius:var(--radius);padding:24px;
+    max-height:calc(100vh - 108px);overflow:auto;
+    border:1px solid var(--line);
+  }
+  .paper{
+    background:var(--paper);
+    background-image:
+      linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0) 120px);
+    color:#23282f;
+    width:100%;max-width:640px;margin:0 auto;
+    padding:54px 56px 60px;
+    border:1px solid var(--paper-edge);
+    border-radius:4px;
+    box-shadow:var(--shadow-paper);
+    font-family:var(--fs-doc);font-size:.94rem;line-height:1.72;
+    position:relative;
+  }
+  .paper::after{ /* faint seal watermark */
+    content:"";position:absolute;right:40px;bottom:40px;width:96px;height:96px;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><g fill='none' stroke='%238E2B36' stroke-width='2'><circle cx='50' cy='50' r='44'/><circle cx='50' cy='50' r='35' stroke-dasharray='3 3'/></g><text x='50' y='57' font-family='serif' font-size='22' fill='%238E2B36' text-anchor='middle'>§</text></svg>");
+    background-size:contain;background-repeat:no-repeat;opacity:.05;pointer-events:none;
+  }
+  .doc-court{
+    text-align:right;font-weight:600;font-size:1rem;letter-spacing:.01em;
+    text-transform:uppercase;line-height:1.5;margin-bottom:6px;
+  }
+  .doc-spacer{height:14px}
+  .doc-row{display:flex;gap:8px;margin:3px 0;text-align:justify}
+  .doc-row__label{flex:none;min-width:128px;font-weight:600}
+  .doc-row__label.upper{min-width:158px;font-size:.86rem;letter-spacing:.01em}
+  .doc-row__sep{flex:none}
+  .doc-row__txt{flex:1}
+  .doc-list{margin:8px 0 8px;padding:0;list-style:none;counter-reset:dl}
+  .doc-list li{position:relative;padding-left:26px;margin:7px 0;text-align:justify}
+  .doc-list li::before{
+    counter-increment:dl;content:counter(dl)".";
+    position:absolute;left:0;top:0;font-weight:600;
+  }
+  .doc-bullets{margin:6px 0;padding:0;list-style:none}
+  .doc-bullets li{position:relative;padding-left:20px;margin:5px 0;text-align:justify}
+  .doc-bullets li::before{content:"–";position:absolute;left:4px;top:0;font-weight:600;color:var(--seal)}
+  .doc-sign{margin-top:30px;text-align:right;line-height:1.7}
+  .doc-sign div{font-weight:500}
+  .doc-ek{margin-top:26px}
+  .doc-ek__t{font-weight:600;margin-bottom:4px}
+  .doc-ek ol{list-style:none;padding:0;counter-reset:ek}
+  .doc-ek li{position:relative;padding-left:24px;margin:3px 0}
+  .doc-ek li::before{counter-increment:ek;content:counter(ek)"-";position:absolute;left:0;font-weight:600}
+
+  /* fill-in tokens */
+  .tok{border-radius:3px;padding:0 1px;transition:background .18s,box-shadow .18s}
+  .tok.filled{font-weight:500;color:#1a1f26}
+  .tok.ph{
+    color:#9a8f72;font-style:italic;
+    border-bottom:1px dotted #b9a87f;padding:0 3px;
+  }
+  .tok.active{background:var(--hl);box-shadow:0 0 0 2px var(--hl)}
+
+  /* disclaimer */
+  .disclaimer{
+    max-width:1180px;margin:0 auto;padding:0 22px;
+  }
+  .disclaimer__in{
+    display:flex;gap:12px;align-items:flex-start;
+    background:#fff8f0;border:1px solid #f0e2cd;border-radius:14px;
+    padding:14px 16px;margin-top:30px;font-size:.84rem;color:#7a5e33;line-height:1.5;
+  }
+  .disclaimer__in svg{width:18px;height:18px;flex:none;color:var(--gold);margin-top:1px}
+  .disclaimer__in b{color:#5f481f}
+
+  .footer{
+    border-top:1px solid var(--line);margin-top:50px;
+    background:rgba(255,255,255,.5);
+  }
+  .footer__in{
+    max-width:1180px;margin:0 auto;padding:24px 22px;
+    display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+    font-size:.82rem;color:var(--muted);
+  }
+  .footer__in b{color:var(--ink-soft);font-weight:600}
+
+  /* loading / error */
+  .state{padding:60px 22px;text-align:center;color:var(--muted)}
+  .state .spin{
+    width:30px;height:30px;border:3px solid var(--line);border-top-color:var(--seal);
+    border-radius:50%;margin:0 auto 14px;animation:sp 0.8s linear infinite;
+  }
+  @keyframes sp{to{transform:rotate(360deg)}}
+  .state--err{max-width:560px;margin:30px auto;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-sm)}
+  .state--err code{background:#f1f3f7;padding:2px 7px;border-radius:6px;font-size:.85em}
+
+  @media (max-width:920px){
+    .split{grid-template-columns:1fr}
+    .pane--preview{position:static}
+    .paper-wrap{max-height:none;padding:16px}
+    .paper{padding:38px 30px 44px}
+    .mobile-toggle{display:block}
+    .split[data-view="form"] .pane--preview{display:none}
+    .split[data-view="preview"] .pane--form{display:none}
+    .header-note{display:none}
+  }
+  @media (max-width:480px){
+    .home{padding-top:30px}
+    .paper{padding:30px 22px 36px;font-size:.9rem}
+    .doc-row{flex-direction:column;gap:0}
+    .doc-row__label{min-width:0}
+    .doc-row__sep{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+  /* print */
+  @media print{
+    .app-header,.editor-top,.editor-head,.toolbar,.mobile-toggle,.disclaimer,.footer,.home{display:none!important}
+    body{background:#fff}
+    .editor{padding:0;max-width:none}
+    .split{display:block}
+    .pane--form{display:none!important}
+    .pane--preview{position:static}
+    .paper-wrap{background:none;border:none;padding:0;max-height:none;overflow:visible}
+    .paper{box-shadow:none;border:none;max-width:none;width:100%;padding:0;font-size:11.5pt;color:#000}
+    .paper::after{display:none}
+    .tok.ph{color:#666;border:none}
+    .tok.active{background:none;box-shadow:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="app-header">
+  <div class="app-header__in">
+    <div class="brand" id="brandHome" role="button" tabindex="0" aria-label="Ana sayfa">
+      <svg class="brand__mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <rect x="7" y="4" width="22" height="30" rx="3" fill="#fff" stroke="#26426F" stroke-width="2"/>
+        <line x1="12" y1="12" x2="24" y2="12" stroke="#26426F" stroke-width="2" stroke-linecap="round"/>
+        <line x1="12" y1="17" x2="24" y2="17" stroke="#9AA7BE" stroke-width="2" stroke-linecap="round"/>
+        <line x1="12" y1="22" x2="20" y2="22" stroke="#9AA7BE" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="28" cy="29" r="8" fill="#8E2B36"/>
+        <path d="M28 25.5v7M24.7 29h6.6" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <div class="brand__name">Dilekçe<b>m</b></div>
+        <div class="brand__tag">Hazır resmi dilekçe şablonları</div>
+      </div>
+    </div>
+    <div class="header-spacer"></div>
+    <div class="header-note">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linejoin="round"/></svg>
+      Verileriniz tarayıcınızda kalır
+    </div>
+  </div>
+</header>
+
+<!-- HOME -->
+<main class="home" id="home">
+  <section class="hero">
+    <span class="eyebrow"><span class="dot"></span>Resmi yazışma yardımcısı</span>
+    <h1>Doğru dilekçeyi seçin, <span class="seal-ink">birkaç dakikada</span> hazır olsun.</h1>
+    <p>Boşlukları doldurun; dilekçeniz sağ tarafta canlı olarak biçimlenir. Hazır olunca metni kopyalayın veya PDF olarak yazdırın.</p>
+  </section>
+  <div id="catalog"><div class="state"><div class="spin"></div>Dilekçeler yükleniyor…</div></div>
+</main>
+
+<!-- EDITOR -->
+<section class="editor" id="editor" aria-live="polite"></section>
+
+<div class="disclaimer" id="disclaimerHost"></div>
+
+<footer class="footer">
+  <div class="footer__in">
+    <span><b>Dilekçem</b> — açık şablonlar, vanilla JS ile.</span>
+    <span id="yearNote"></span>
+  </div>
+</footer>
+
+<script>
+/* ----------------------------------------------------------
+   Dilekçem — tek dosya uygulama mantığı
+   Veri: dilekceler/manifest.json + dilekceler/<id>.json
+---------------------------------------------------------- */
+const ICONS = {
+  "Aile Hukuku":'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9-8.5C1.5 9 3.5 6 6.5 6 8.5 6 12 8 12 8s3.5-2 5.5-2C20.5 6 22.5 9 21 12.5 19 16.5 12 21 12 21z"/></svg>',
+  "İdari / Trafik":'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14M6 17l1.4-5.5A2 2 0 0 1 9.3 10h5.4a2 2 0 0 1 1.9 1.5L18 17"/><circle cx="7.5" cy="17.5" r="1.6"/><circle cx="16.5" cy="17.5" r="1.6"/></svg>',
+  "_default":'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>'
+};
+const catIcon = c => ICONS[c] || ICONS._default;
+
+const el = (h)=>{const t=document.createElement('template');t.innerHTML=h.trim();return t.content.firstChild;};
+const esc = (s)=>(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+const home=document.getElementById('home');
+const editor=document.getElementById('editor');
+const disclaimerHost=document.getElementById('disclaimerHost');
+
+let state={petition:null,values:{},fieldMeta:{},mobileView:'form'};
+
+/* ---------- katalog ---------- */
+async function loadCatalog(){
+  const host=document.getElementById('catalog');
+  try{
+    const res=await fetch('dilekceler/manifest.json',{cache:'no-cache'});
+    if(!res.ok) throw new Error('manifest '+res.status);
+    const data=await res.json();
+    renderCatalog(data.petitions||[]);
+  }catch(err){
+    host.innerHTML=`
+      <div class="state state--err" style="padding:26px 28px;text-align:left">
+        <h3 style="font-family:var(--fs-display);margin-bottom:8px">Dilekçeler yüklenemedi</h3>
+        <p style="color:var(--muted);font-size:.92rem;line-height:1.6">
+          Dosyalar bir <b>web sunucusu</b> üzerinden açılmalı. Yerelde denemek için klasörde şunu çalıştırın:
+          <br><code>python -m http.server</code><br>
+          ardından <code>http://localhost:8000</code> adresini açın. GitHub Pages'te sorunsuz çalışır.
+        </p>
+      </div>`;
+  }
+}
+
+function renderCatalog(list){
+  const host=document.getElementById('catalog');
+  const cats=[...new Set(list.map(p=>p.category))];
+  host.innerHTML='';
+  cats.forEach(cat=>{
+    const items=list.filter(p=>p.category===cat);
+    const sec=el(`<section class="cat">
+      <div class="cat__head">
+        <span class="cat__title">${esc(cat)}</span>
+        <span class="cat__rule"></span>
+        <span class="cat__count">${items.length} dilekçe</span>
+      </div>
+      <div class="grid"></div>
+    </section>`);
+    const grid=sec.querySelector('.grid');
+    items.forEach(p=>{
+      const card=el(`<button class="card" type="button">
+        <div class="card__ico">${catIcon(p.category)}</div>
+        <div class="card__cat">${esc(p.category)}</div>
+        <div class="card__title">${esc(p.title)}</div>
+        <div class="card__desc">${esc(p.description)}</div>
+        <span class="card__go">Dilekçeyi doldur
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </button>`);
+      card.addEventListener('click',()=>openPetition(p.file));
+      grid.appendChild(card);
+    });
+    host.appendChild(sec);
+  });
+}
+
+/* ---------- bir dilekçeyi aç ---------- */
+async function openPetition(file){
+  editor.classList.add('active');
+  editor.innerHTML=`<div class="state"><div class="spin"></div>Dilekçe hazırlanıyor…</div>`;
+  home.style.display='none';
+  disclaimerHost.innerHTML='';
+  window.scrollTo({top:0});
+  try{
+    const res=await fetch(file,{cache:'no-cache'});
+    if(!res.ok) throw new Error('file '+res.status);
+    const p=await res.json();
+    buildEditor(p);
+  }catch(err){
+    editor.innerHTML=`<div class="state state--err" style="padding:26px 28px">
+      <h3 style="font-family:var(--fs-display);margin-bottom:8px">Dilekçe yüklenemedi</h3>
+      <p style="color:var(--muted)">Dosyaya ulaşılamadı: <code>${esc(file)}</code></p>
+      <button class="btn btn--ghost" style="margin-top:14px" onclick="goHome()">← Geri dön</button>
+    </div>`;
+  }
+}
+
+function buildEditor(p){
+  state.petition=p;
+  state.values={};
+  state.fieldMeta={};
+  state.mobileView='form';
+  p.groups.forEach(g=>g.fields.forEach(f=>{
+    state.values[f.id]=f.value||'';
+    state.fieldMeta[f.id]=f;
+  }));
+
+  editor.innerHTML=`
+    <div class="editor-top">
+      <button class="back-btn" type="button" id="backBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+        Tüm dilekçeler
+      </button>
+    </div>
+    <div class="editor-head">
+      <div class="ecat">${esc(p.category)}</div>
+      <h2>${esc(p.title)}</h2>
+    </div>
+    <div class="toolbar">
+      <button class="btn btn--primary" id="copyBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+        Metni kopyala
+      </button>
+      <button class="btn btn--ghost" id="printBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2M6 14h12v7H6z"/></svg>
+        Yazdır / PDF indir
+      </button>
+      <span class="copied-tag" id="copiedTag">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        Panoya kopyalandı
+      </span>
+    </div>
+    <div class="mobile-toggle">
+      <div class="seg">
+        <button data-v="form" class="on">Doldur</button>
+        <button data-v="preview">Önizleme</button>
+      </div>
+    </div>
+    <div class="split" data-view="form" id="split">
+      <div class="pane pane--form" id="formPane"></div>
+      <div class="pane pane--preview">
+        <div class="paper-wrap"><div class="paper" id="paper"></div></div>
+      </div>
+    </div>`;
+
+  buildForm(p);
+  renderPaper();
+
+  disclaimerHost.innerHTML=`<div class="disclaimer__in">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+    <span><b>Bilgilendirme:</b> Bu şablonlar genel bilgi amaçlıdır ve hukuki danışmanlık yerine geçmez. Önemli durumlarda bir avukata danışmanız önerilir. Boşluklardaki örnek ifadeleri kendi durumunuza göre düzenleyin.</span>
+  </div>`;
+
+  // events
+  document.getElementById('backBtn').addEventListener('click',goHome);
+  document.getElementById('copyBtn').addEventListener('click',copyDocument);
+  document.getElementById('printBtn').addEventListener('click',()=>window.print());
+  document.querySelectorAll('.mobile-toggle .seg button').forEach(b=>{
+    b.addEventListener('click',()=>{
+      document.querySelectorAll('.mobile-toggle .seg button').forEach(x=>x.classList.remove('on'));
+      b.classList.add('on');
+      document.getElementById('split').dataset.view=b.dataset.v;
+      document.querySelector('.paper-wrap').scrollTop=0;
+    });
+  });
+}
+
+function buildForm(p){
+  const pane=document.getElementById('formPane');
+  pane.innerHTML='';
+  p.groups.forEach((g,gi)=>{
+    const grp=el(`<div class="fgroup">
+      <div class="fgroup__head">
+        <span class="fgroup__num">${gi+1}</span>
+        <span class="fgroup__title">${esc(g.title)}</span>
+      </div>
+      <div class="fgroup__body"></div>
+    </div>`);
+    const body=grp.querySelector('.fgroup__body');
+    g.fields.forEach(f=>{
+      const ctrl = f.type==='textarea'
+        ? `<textarea data-field="${f.id}" rows="2" placeholder="${esc(f.placeholder)}">${esc(f.value||'')}</textarea>`
+        : `<input type="text" data-field="${f.id}" placeholder="${esc(f.placeholder)}" value="${esc(f.value||'')}" />`;
+      const field=el(`<div class="field"><label for="f_${f.id}">${esc(f.label)}</label>${ctrl}</div>`);
+      const input=field.querySelector('[data-field]');
+      input.id='f_'+f.id;
+      input.addEventListener('input',e=>{
+        state.values[f.id]=e.target.value;
+        updateTokens(f.id);
+      });
+      input.addEventListener('focus',()=>highlightToken(f.id,true));
+      input.addEventListener('blur',()=>highlightToken(f.id,false));
+      body.appendChild(field);
+    });
+    pane.appendChild(grp);
+  });
+}
+
+/* ---------- belge oluşturma ---------- */
+function tokenHTML(text){
+  return esc(text).replace(/\{\{(\w+)\}\}/g,(m,id)=>{
+    const v=(state.values[id]??'').trim();
+    if(v) return `<span class="tok filled" data-token="${id}">${esc(v)}</span>`;
+    const meta=state.fieldMeta[id];
+    const hint=meta?(meta.placeholder||meta.label):'…';
+    return `<span class="tok ph" data-token="${id}">${esc(hint)}</span>`;
+  });
+}
+
+function renderPaper(){
+  const paper=document.getElementById('paper');
+  const p=state.petition;
+  let html='';
+  p.document.forEach(b=>{
+    switch(b.type){
+      case 'court': html+=`<div class="doc-court">${tokenHTML(b.text)}</div>`; break;
+      case 'spacer': html+=`<div class="doc-spacer"></div>`; break;
+      case 'row':{
+        const upper = b.label===b.label.toUpperCase() && b.label.length>3;
+        html+=`<div class="doc-row"><span class="doc-row__label${upper?' upper':''}">${esc(b.label)}</span><span class="doc-row__sep">:</span><span class="doc-row__txt">${tokenHTML(b.text)}</span></div>`;
+        break;
+      }
+      case 'numbered':
+        html+='<ol class="doc-list">'+b.items.map(i=>`<li>${tokenHTML(i)}</li>`).join('')+'</ol>';
+        break;
+      case 'bullets':
+        html+='<ul class="doc-bullets">'+b.items.map(i=>`<li>${tokenHTML(i)}</li>`).join('')+'</ul>';
+        break;
+      case 'signature':
+        html+='<div class="doc-sign">'+b.lines.map(l=>`<div>${tokenHTML(l)}</div>`).join('')+'</div>';
+        break;
+      case 'ek':
+        html+=`<div class="doc-ek"><div class="doc-ek__t">${esc(b.title)}</div><ol>`+
+              b.items.map(i=>`<li>${tokenHTML(i)}</li>`).join('')+'</ol></div>';
+        break;
+    }
+  });
+  paper.innerHTML=html;
+}
+
+/* sadece ilgili token'ları güncelle (akıcı yazım) */
+function updateTokens(id){
+  const v=(state.values[id]??'').trim();
+  const meta=state.fieldMeta[id];
+  const hint=meta?(meta.placeholder||meta.label):'…';
+  document.querySelectorAll(`.tok[data-token="${id}"]`).forEach(span=>{
+    if(v){span.textContent=v;span.className='tok filled active';}
+    else{span.textContent=hint;span.className='tok ph active';}
+  });
+}
+function highlightToken(id,on){
+  document.querySelectorAll(`.tok[data-token="${id}"]`).forEach(s=>s.classList.toggle('active',on));
+}
+
+/* ---------- düz metin + kopyala ---------- */
+function plainText(text){
+  return (text||'').replace(/\{\{(\w+)\}\}/g,(m,id)=>{
+    const v=(state.values[id]??'').trim();
+    if(v) return v;
+    const meta=state.fieldMeta[id];
+    return '['+(meta?(meta.placeholder||meta.label):'…')+']';
+  });
+}
+function buildPlain(){
+  const p=state.petition;const out=[];
+  p.document.forEach(b=>{
+    switch(b.type){
+      case 'court': out.push(plainText(b.text).toUpperCase());break;
+      case 'spacer': out.push('');break;
+      case 'row':
+        out.push(b.text?`${b.label} : ${plainText(b.text)}`:`${b.label} :`);break;
+      case 'numbered':
+        b.items.forEach((i,n)=>out.push(`${n+1}. ${plainText(i)}`));break;
+      case 'bullets':
+        b.items.forEach(i=>out.push(`- ${plainText(i)}`));break;
+      case 'signature':
+        out.push('');b.lines.forEach(l=>out.push('\t\t\t\t'+plainText(l)));break;
+      case 'ek':
+        out.push('');out.push(b.title);
+        b.items.forEach((i,n)=>out.push(`${n+1}- ${plainText(i)}`));break;
+    }
+  });
+  return out.join('\n').replace(/\n{3,}/g,'\n\n');
+}
+async function copyDocument(){
+  const text=buildPlain();
+  try{
+    await navigator.clipboard.writeText(text);
+  }catch{
+    const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);
+    ta.select();document.execCommand('copy');ta.remove();
+  }
+  const tag=document.getElementById('copiedTag');
+  tag.classList.add('show');
+  setTimeout(()=>tag.classList.remove('show'),1900);
+}
+
+/* ---------- gezinme ---------- */
+function goHome(){
+  editor.classList.remove('active');
+  editor.innerHTML='';
+  disclaimerHost.innerHTML='';
+  home.style.display='';
+  state.petition=null;
+  window.scrollTo({top:0});
+}
+document.getElementById('brandHome').addEventListener('click',goHome);
+document.getElementById('brandHome').addEventListener('keydown',e=>{if(e.key==='Enter')goHome();});
+document.getElementById('yearNote').textContent=new Date().getFullYear()+' · Bilgi amaçlıdır, hukuki danışmanlık değildir.';
+
+loadCatalog();
+</script>
+</body>
+</html>
