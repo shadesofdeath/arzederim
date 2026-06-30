@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#f5f7fa" />
 <title>Dilekçem — Hazır Resmi Dilekçe Şablonları</title>
 <meta name="description" content="Resmi dilekçe şablonlarını doldurun, anında düzgün biçimlenmiş halini kopyalayın veya PDF olarak indirin." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,6 +29,24 @@
     --accent-soft:#365a93;
     --accent-bg:#EAF0F8;
     --hl:#FBEFC2;
+    --line-strong:#CFD6E3;
+    --ok:#1d7a4d;
+    --bg-glow:rgba(255,255,255,.9);
+    --doc-ink:#23282f;
+    --doc-filled:#1a1f26;
+    --doc-ph:#9a8f72;
+    --doc-ph-line:#b9a87f;
+    --paper-wrap-bg:#dfe3ec;
+    --seg-bg:#e4e8f0;
+    --input-bg:#fbfcfe;
+    --input-bg-focus:#ffffff;
+    --header-bg:rgba(245,247,250,.78);
+    --fg-head-1:#fbfcfe;
+    --fg-head-2:#f7f9fc;
+    --disc-bg:#fff8f0;--disc-border:#f0e2cd;--disc-ink:#7a5e33;--disc-ink-strong:#5f481f;
+    --code-bg:#f1f3f7;
+    --note-bg:#eef4fb;--note-border:#d7e3f4;--note-ink:#2c4a73;
+    --footer-bg:rgba(255,255,255,.5);--paper-sheen:rgba(255,255,255,.5);
     --radius:18px;
     --radius-sm:12px;
     --shadow-sm:0 1px 2px rgba(26,34,52,.05),0 2px 8px rgba(26,34,52,.05);
@@ -37,18 +56,61 @@
     --fs-display:'Schibsted Grotesk','Inter',sans-serif;
     --fs-doc:'Lora',Georgia,serif;
   }
+  /* ---------- Dark theme ---------- */
+  [data-theme="dark"]{
+    --bg:#0e1320;
+    --bg-grad:#131a29;
+    --surface:#1a2031;
+    --ink:#e9edf5;
+    --ink-soft:#c2cbdb;
+    --muted:#8a94a9;
+    --faint:#5c6678;
+    --line:#28303f;
+    --line-soft:#222937;
+    --line-strong:#39435a;
+    --paper:#1c2230;
+    --paper-edge:#2d3648;
+    --seal:#d2727a;
+    --seal-soft:#e0939a;
+    --gold:#cba968;
+    --accent:#5b88ce;
+    --accent-soft:#7aa2e2;
+    --accent-bg:#1e2a40;
+    --hl:#5c4e24;
+    --ok:#5fd39a;
+    --bg-glow:rgba(91,136,206,.10);
+    --doc-ink:#dbe1ec;
+    --doc-filled:#f1f4fa;
+    --doc-ph:#9a8f72;
+    --doc-ph-line:#7d7253;
+    --paper-wrap-bg:#11161f;
+    --seg-bg:#222a3a;
+    --input-bg:#141a27;
+    --input-bg-focus:#0f141f;
+    --header-bg:rgba(16,21,33,.82);
+    --fg-head-1:#1d2435;
+    --fg-head-2:#181f2e;
+    --disc-bg:#2a2417;--disc-border:#473e26;--disc-ink:#d6c79e;--disc-ink-strong:#efe2bf;
+    --code-bg:#222a3a;
+    --note-bg:#16243a;--note-border:#284162;--note-ink:#a9c6ee;
+    --footer-bg:rgba(255,255,255,.02);--paper-sheen:rgba(255,255,255,.035);
+    --shadow-sm:0 1px 2px rgba(0,0,0,.3),0 2px 8px rgba(0,0,0,.25);
+    --shadow-md:0 4px 14px rgba(0,0,0,.35),0 18px 40px rgba(0,0,0,.45);
+    --shadow-paper:0 1px 3px rgba(0,0,0,.4),0 22px 50px rgba(0,0,0,.55);
+  }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
     font-family:var(--fs-ui);
     color:var(--ink);
     background:
-      radial-gradient(1200px 600px at 80% -10%, #fff 0%, rgba(255,255,255,0) 60%),
+      radial-gradient(1200px 600px at 80% -10%, var(--bg-glow) 0%, rgba(255,255,255,0) 60%),
       linear-gradient(180deg,var(--bg-grad),var(--bg));
     background-attachment:fixed;
     min-height:100vh;
     -webkit-font-smoothing:antialiased;
     line-height:1.5;
+    transition:background-color .3s ease;
   }
   button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
   ::selection{background:var(--hl)}
@@ -58,7 +120,7 @@
     position:sticky;top:0;z-index:50;
     backdrop-filter:saturate(160%) blur(14px);
     -webkit-backdrop-filter:saturate(160%) blur(14px);
-    background:rgba(245,247,250,.78);
+    background:var(--header-bg);
     border-bottom:1px solid var(--line);
   }
   .app-header__in{
@@ -82,7 +144,7 @@
   .eyebrow{
     display:inline-flex;align-items:center;gap:7px;
     font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
-    color:var(--seal);background:#fff;border:1px solid var(--line);
+    color:var(--seal);background:var(--surface);border:1px solid var(--line);
     padding:6px 12px;border-radius:999px;box-shadow:var(--shadow-sm);
   }
   .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--seal)}
@@ -117,7 +179,7 @@
     background:linear-gradient(180deg,var(--seal),var(--seal-soft));
     opacity:0;transition:opacity .22s;
   }
-  .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:#d4dae6}
+  .card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:var(--line-strong)}
   .card:hover::before{opacity:1}
   .card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .card__ico{
@@ -148,9 +210,9 @@
     display:inline-flex;align-items:center;gap:7px;
     font-size:.88rem;font-weight:500;color:var(--ink-soft);
     padding:8px 13px 8px 10px;border-radius:10px;border:1px solid var(--line);
-    background:#fff;box-shadow:var(--shadow-sm);transition:.18s;
+    background:var(--surface);box-shadow:var(--shadow-sm);transition:.18s;
   }
-  .back-btn:hover{color:var(--ink);border-color:#cfd6e3}
+  .back-btn:hover{color:var(--ink);border-color:var(--line-strong)}
   .back-btn svg{width:16px;height:16px}
   .editor-head{margin:14px 0 18px}
   .editor-head .ecat{
@@ -169,20 +231,20 @@
   .btn svg{width:17px;height:17px}
   .btn--primary{background:var(--accent);color:#fff;box-shadow:0 2px 8px rgba(38,66,111,.28)}
   .btn--primary:hover{background:var(--accent-soft);transform:translateY(-1px)}
-  .btn--ghost{background:#fff;color:var(--ink-soft);border:1px solid var(--line);box-shadow:var(--shadow-sm)}
-  .btn--ghost:hover{border-color:#cfd6e3;color:var(--ink)}
+  .btn--ghost{background:var(--surface);color:var(--ink-soft);border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+  .btn--ghost:hover{border-color:var(--line-strong);color:var(--ink)}
   .toolbar__sp{flex:1}
   .copied-tag{
-    font-size:.82rem;font-weight:600;color:#1d7a4d;display:flex;align-items:center;gap:6px;
+    font-size:.82rem;font-weight:600;color:var(--ok);display:flex;align-items:center;gap:6px;
     opacity:0;transform:translateY(2px);transition:.2s;pointer-events:none;
   }
   .copied-tag.show{opacity:1;transform:none}
   .copied-tag svg{width:15px;height:15px}
 
   .mobile-toggle{display:none;margin-bottom:16px}
-  .seg{display:inline-flex;background:#e4e8f0;border-radius:12px;padding:4px;gap:3px;width:100%}
+  .seg{display:inline-flex;background:var(--seg-bg);border-radius:12px;padding:4px;gap:3px;width:100%}
   .seg button{flex:1;font-size:.86rem;font-weight:600;color:var(--muted);padding:9px;border-radius:9px;transition:.16s}
-  .seg button.on{background:#fff;color:var(--ink);box-shadow:var(--shadow-sm)}
+  .seg button.on{background:var(--surface);color:var(--ink);box-shadow:var(--shadow-sm)}
 
   .split{display:grid;grid-template-columns:minmax(360px,440px) 1fr;gap:26px;align-items:start}
 
@@ -195,7 +257,7 @@
   .fgroup__head{
     display:flex;align-items:center;gap:10px;
     padding:14px 18px;border-bottom:1px solid var(--line-soft);
-    background:linear-gradient(180deg,#fbfcfe,#f7f9fc);
+    background:linear-gradient(180deg,var(--fg-head-1),var(--fg-head-2));
   }
   .fgroup__num{
     width:22px;height:22px;border-radius:7px;flex:none;
@@ -208,28 +270,28 @@
   .field input,.field textarea{
     width:100%;font-family:inherit;font-size:.92rem;color:var(--ink);
     padding:10px 12px;border:1px solid var(--line);border-radius:10px;
-    background:#fbfcfe;transition:.16s;resize:vertical;
+    background:var(--input-bg);transition:.16s;resize:vertical;
   }
   .field textarea{min-height:62px;line-height:1.45}
   .field input::placeholder,.field textarea::placeholder{color:var(--faint)}
-  .field input:hover,.field textarea:hover{border-color:#cfd6e3}
+  .field input:hover,.field textarea:hover{border-color:var(--line-strong)}
   .field input:focus,.field textarea:focus{
-    outline:none;border-color:var(--accent);background:#fff;
+    outline:none;border-color:var(--accent);background:var(--input-bg-focus);
     box-shadow:0 0 0 3px rgba(38,66,111,.12);
   }
 
   /* ---- Preview pane ---- */
   .pane--preview{position:sticky;top:84px}
   .paper-wrap{
-    background:#dfe3ec;border-radius:var(--radius);padding:24px;
+    background:var(--paper-wrap-bg);border-radius:var(--radius);padding:24px;
     max-height:calc(100vh - 108px);overflow:auto;
     border:1px solid var(--line);
   }
   .paper{
     background:var(--paper);
     background-image:
-      linear-gradient(180deg,rgba(255,255,255,.5),rgba(255,255,255,0) 120px);
-    color:#23282f;
+      linear-gradient(180deg,var(--paper-sheen),rgba(255,255,255,0) 120px);
+    color:var(--doc-ink);
     width:100%;max-width:640px;margin:0 auto;
     padding:54px 56px 60px;
     border:1px solid var(--paper-edge);
@@ -272,12 +334,46 @@
 
   /* fill-in tokens */
   .tok{border-radius:3px;padding:0 1px;transition:background .18s,box-shadow .18s}
-  .tok.filled{font-weight:500;color:#1a1f26}
+  .tok.filled{font-weight:500;color:var(--doc-filled)}
   .tok.ph{
-    color:#9a8f72;font-style:italic;
-    border-bottom:1px dotted #b9a87f;padding:0 3px;
+    color:var(--doc-ph);font-style:italic;
+    border-bottom:1px dotted var(--doc-ph-line);padding:0 3px;
   }
   .tok.active{background:var(--hl);box-shadow:0 0 0 2px var(--hl)}
+
+  /* theme toggle */
+  .theme-toggle{
+    width:38px;height:38px;flex:none;border-radius:11px;
+    display:grid;place-items:center;
+    background:var(--surface);border:1px solid var(--line);
+    box-shadow:var(--shadow-sm);color:var(--ink-soft);transition:.18s;
+  }
+  .theme-toggle:hover{border-color:var(--line-strong);color:var(--ink);transform:translateY(-1px)}
+  .theme-toggle svg{width:19px;height:19px}
+  .theme-toggle .ico-moon{display:none}
+  [data-theme="dark"] .theme-toggle .ico-sun{display:none}
+  [data-theme="dark"] .theme-toggle .ico-moon{display:block}
+
+  /* per-petition note */
+  .editor-note{
+    display:flex;gap:11px;align-items:flex-start;
+    background:var(--note-bg);border:1px solid var(--note-border);
+    color:var(--note-ink);border-radius:14px;padding:13px 16px;margin-bottom:18px;
+    font-size:.88rem;line-height:1.5;
+  }
+  .editor-note svg{width:18px;height:18px;flex:none;margin-top:1px;color:var(--accent)}
+  .editor-note b{font-weight:600}
+
+  /* edit mode */
+  .btn--toggle.on{background:var(--seal);color:#fff;border-color:var(--seal);box-shadow:0 2px 8px rgba(142,43,54,.28)}
+  .edit-hint{
+    font-size:.82rem;color:var(--muted);margin-bottom:14px;display:none;
+    align-items:center;gap:7px;
+  }
+  .edit-hint.show{display:flex}
+  .edit-hint svg{width:15px;height:15px;color:var(--seal-soft);flex:none}
+  .paper--edit{outline:2px dashed var(--seal-soft);outline-offset:6px}
+  .pane--form.locked{opacity:.45;pointer-events:none;filter:grayscale(.25)}
 
   /* disclaimer */
   .disclaimer{
@@ -285,15 +381,15 @@
   }
   .disclaimer__in{
     display:flex;gap:12px;align-items:flex-start;
-    background:#fff8f0;border:1px solid #f0e2cd;border-radius:14px;
-    padding:14px 16px;margin-top:30px;font-size:.84rem;color:#7a5e33;line-height:1.5;
+    background:var(--disc-bg);border:1px solid var(--disc-border);border-radius:14px;
+    padding:14px 16px;margin-top:30px;font-size:.84rem;color:var(--disc-ink);line-height:1.5;
   }
   .disclaimer__in svg{width:18px;height:18px;flex:none;color:var(--gold);margin-top:1px}
-  .disclaimer__in b{color:#5f481f}
+  .disclaimer__in b{color:var(--disc-ink-strong)}
 
   .footer{
     border-top:1px solid var(--line);margin-top:50px;
-    background:rgba(255,255,255,.5);
+    background:var(--footer-bg);
   }
   .footer__in{
     max-width:1180px;margin:0 auto;padding:24px 22px;
@@ -310,7 +406,7 @@
   }
   @keyframes sp{to{transform:rotate(360deg)}}
   .state--err{max-width:560px;margin:30px auto;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-sm)}
-  .state--err code{background:#f1f3f7;padding:2px 7px;border-radius:6px;font-size:.85em}
+  .state--err code{background:var(--code-bg);padding:2px 7px;border-radius:6px;font-size:.85em}
 
   @media (max-width:920px){
     .split{grid-template-columns:1fr}
@@ -333,17 +429,18 @@
 
   /* print */
   @media print{
-    .app-header,.editor-top,.editor-head,.toolbar,.mobile-toggle,.disclaimer,.footer,.home{display:none!important}
+    .app-header,.editor-top,.editor-head,.toolbar,.mobile-toggle,.disclaimer,.footer,.home,.editor-note,.edit-hint{display:none!important}
     body{background:#fff}
     .editor{padding:0;max-width:none}
     .split{display:block}
     .pane--form{display:none!important}
     .pane--preview{position:static}
-    .paper-wrap{background:none;border:none;padding:0;max-height:none;overflow:visible}
-    .paper{box-shadow:none;border:none;max-width:none;width:100%;padding:0;font-size:11.5pt;color:#000}
+    .paper-wrap{background:none!important;border:none;padding:0;max-height:none;overflow:visible}
+    .paper{box-shadow:none;border:none;outline:none!important;max-width:none;width:100%;padding:0;font-size:11.5pt;background:#fff!important;color:#000}
+    .paper *{color:#000!important}
     .paper::after{display:none}
-    .tok.ph{color:#666;border:none}
-    .tok.active{background:none;box-shadow:none}
+    .tok.ph{color:#555!important;border:none;font-style:normal}
+    .tok.active{background:none!important;box-shadow:none!important}
   }
 </style>
 </head>
@@ -370,6 +467,10 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linejoin="round"/></svg>
       Verileriniz tarayıcınızda kalır
     </div>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Temayı değiştir" title="Açık / koyu tema">
+      <svg class="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M2 12h2.5M19.5 12H22M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>
+      <svg class="ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.3 6.3 0 0 0 10.5 10.5z"/></svg>
+    </button>
   </div>
 </header>
 
@@ -511,6 +612,10 @@ function buildEditor(p){
       <div class="ecat">${esc(p.category)}</div>
       <h2>${esc(p.title)}</h2>
     </div>
+    ${p.note?`<div class="editor-note">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>
+      <span>${p.note}</span>
+    </div>`:''}
     <div class="toolbar">
       <button class="btn btn--primary" id="copyBtn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
@@ -520,10 +625,18 @@ function buildEditor(p){
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2M6 14h12v7H6z"/></svg>
         Yazdır / PDF indir
       </button>
+      <button class="btn btn--ghost btn--toggle" id="editBtn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
+        <span id="editBtnLabel">Metni elle düzenle</span>
+      </button>
       <span class="copied-tag" id="copiedTag">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
         Panoya kopyalandı
       </span>
+    </div>
+    <div class="edit-hint" id="editHint">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+      Belge üzerinde doğrudan yazıyorsunuz. Formu yeniden kullanmak için bu modu kapatın (elle yaptığınız değişiklikler sıfırlanır).
     </div>
     <div class="mobile-toggle">
       <div class="seg">
@@ -547,9 +660,11 @@ function buildEditor(p){
   </div>`;
 
   // events
+  state.editing=false;
   document.getElementById('backBtn').addEventListener('click',goHome);
   document.getElementById('copyBtn').addEventListener('click',copyDocument);
   document.getElementById('printBtn').addEventListener('click',()=>window.print());
+  document.getElementById('editBtn').addEventListener('click',toggleEdit);
   document.querySelectorAll('.mobile-toggle .seg button').forEach(b=>{
     b.addEventListener('click',()=>{
       document.querySelectorAll('.mobile-toggle .seg button').forEach(x=>x.classList.remove('on'));
@@ -678,7 +793,7 @@ function buildPlain(){
   return out.join('\n').replace(/\n{3,}/g,'\n\n');
 }
 async function copyDocument(){
-  const text=buildPlain();
+  const text=state.editing?serializeDOM():buildPlain();
   try{
     await navigator.clipboard.writeText(text);
   }catch{
@@ -690,8 +805,81 @@ async function copyDocument(){
   setTimeout(()=>tag.classList.remove('show'),1900);
 }
 
+/* ---------- serbest düzenleme modu ---------- */
+function toggleEdit(){
+  state.editing?exitEdit():enterEdit();
+}
+function enterEdit(){
+  const paper=document.getElementById('paper');
+  // token'ları düz metne çevir ki elle yazılabilsin ve kopyalanabilsin
+  paper.querySelectorAll('.tok').forEach(span=>{
+    const filled=span.classList.contains('filled');
+    const txt=filled?span.textContent:('['+span.textContent+']');
+    span.replaceWith(document.createTextNode(txt));
+  });
+  paper.setAttribute('contenteditable','true');
+  paper.classList.add('paper--edit');
+  document.getElementById('formPane').classList.add('locked');
+  document.querySelectorAll('#formPane [data-field]').forEach(i=>i.disabled=true);
+  document.getElementById('editHint').classList.add('show');
+  const btn=document.getElementById('editBtn');
+  btn.classList.add('on');
+  document.getElementById('editBtnLabel').textContent='Düzenlemeyi bitir';
+  state.editing=true;
+  // mobilde önizlemeye geç
+  const seg=document.querySelector('.mobile-toggle .seg button[data-v="preview"]');
+  if(seg) seg.click();
+  paper.focus();
+}
+function exitEdit(){
+  state.editing=false;
+  document.getElementById('paper').removeAttribute('contenteditable');
+  document.getElementById('paper').classList.remove('paper--edit');
+  document.getElementById('formPane').classList.remove('locked');
+  document.querySelectorAll('#formPane [data-field]').forEach(i=>i.disabled=false);
+  document.getElementById('editHint').classList.remove('show');
+  const btn=document.getElementById('editBtn');
+  btn.classList.remove('on');
+  document.getElementById('editBtnLabel').textContent='Metni elle düzenle';
+  renderPaper(); // formdaki verilerden yeniden oluştur
+}
+/* düzenleme modunda DOM'dan düz metin üret */
+function serializeDOM(){
+  const paper=document.getElementById('paper');
+  const out=[];
+  paper.childNodes.forEach(node=>{
+    if(node.nodeType!==1) return;
+    const cls=node.className||'';
+    const t=s=>(s||'').replace(/\s+/g,' ').trim();
+    if(cls.includes('doc-court')) out.push(t(node.textContent).toUpperCase());
+    else if(cls.includes('doc-spacer')) out.push('');
+    else if(cls.includes('doc-row')){
+      const lab=t(node.querySelector('.doc-row__label')?.textContent);
+      const txt=t(node.querySelector('.doc-row__txt')?.textContent);
+      out.push(txt?`${lab} : ${txt}`:`${lab} :`);
+    }
+    else if(node.matches('ol.doc-list')){
+      [...node.children].forEach((li,n)=>out.push(`${n+1}. ${t(li.textContent)}`));
+    }
+    else if(node.matches('ul.doc-bullets')){
+      [...node.children].forEach(li=>out.push(`- ${t(li.textContent)}`));
+    }
+    else if(cls.includes('doc-sign')){
+      [...node.children].forEach(d=>out.push('\t\t\t\t'+t(d.textContent)));
+    }
+    else if(cls.includes('doc-ek')){
+      out.push('');
+      out.push(t(node.querySelector('.doc-ek__t')?.textContent));
+      const lis=node.querySelectorAll('ol li');
+      lis.forEach((li,n)=>out.push(`${n+1}- ${t(li.textContent)}`));
+    }
+  });
+  return out.join('\n').replace(/\n{3,}/g,'\n\n');
+}
+
 /* ---------- gezinme ---------- */
 function goHome(){
+  state.editing=false;
   editor.classList.remove('active');
   editor.innerHTML='';
   disclaimerHost.innerHTML='';
@@ -702,6 +890,35 @@ function goHome(){
 document.getElementById('brandHome').addEventListener('click',goHome);
 document.getElementById('brandHome').addEventListener('keydown',e=>{if(e.key==='Enter')goHome();});
 document.getElementById('yearNote').textContent=new Date().getFullYear()+' · Bilgi amaçlıdır, hukuki danışmanlık değildir.';
+
+/* ---------- tema ---------- */
+const THEME_KEY='dilekcem-theme';
+function applyTheme(mode){
+  if(mode==='dark') document.documentElement.setAttribute('data-theme','dark');
+  else document.documentElement.removeAttribute('data-theme');
+  const meta=document.querySelector('meta[name="theme-color"]');
+  if(meta) meta.setAttribute('content', mode==='dark'?'#10151f':'#f5f7fa');
+}
+function initTheme(){
+  let stored=null;
+  try{stored=localStorage.getItem(THEME_KEY);}catch{}
+  const sysDark=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme(stored||(sysDark?'dark':'light'));
+  // sistem değişimini, kullanıcı seçim yapmadıysa takip et
+  if(window.matchMedia){
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',e=>{
+      let s=null; try{s=localStorage.getItem(THEME_KEY);}catch{}
+      if(!s) applyTheme(e.matches?'dark':'light');
+    });
+  }
+}
+document.getElementById('themeToggle').addEventListener('click',()=>{
+  const isDark=document.documentElement.getAttribute('data-theme')==='dark';
+  const next=isDark?'light':'dark';
+  applyTheme(next);
+  try{localStorage.setItem(THEME_KEY,next);}catch{}
+});
+initTheme();
 
 loadCatalog();
 </script>
